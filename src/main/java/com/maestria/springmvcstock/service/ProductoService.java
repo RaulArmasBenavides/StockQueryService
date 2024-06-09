@@ -22,8 +22,8 @@ public class ProductoService {
         return productoRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Task not found"));
     }
 
-    public Producto save(Producto task) {
-        return productoRepository.save(task);
+    public Producto save(Producto prod) {
+        return productoRepository.save(prod);
     }
 
     public Producto updateProducto(Long id, Producto producto) {
