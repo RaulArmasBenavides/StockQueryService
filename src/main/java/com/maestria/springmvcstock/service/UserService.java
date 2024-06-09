@@ -19,7 +19,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    private static final String SECRET_KEY = "your_secret_key";
+    private static final String SECRET_KEY = "YmFzZTY0ZW5jb2RlZFNlY3JldEtleVNlY3JldEtleVNlY3JldEtleVNlY3JldEtleVNlY3JldEtleVNlY3JldEtleQ==";
 
     public String authenticate(String username, String password) {
         Optional<User> userOptional = userRepository.findByUsername(username);
@@ -30,7 +30,7 @@ public class UserService {
             }
         }
         return null;
-    }
+    } 
 
     private String generateToken(User user) {
         return Jwts.builder()
