@@ -42,8 +42,8 @@ public class LoginController {
         if (loginResponse != null) {
             return ResponseEntity.ok(loginResponse);
         } else {
-            ErrorResponse errorResponse = new ErrorResponse("Invalid token");
-            return ResponseEntity.status(401).body(errorResponse);
+            // ErrorResponse errorResponse = new ErrorResponse("Invalid token");
+            return ResponseEntity.status(401).body("errorResponse");
         }
     }
 
