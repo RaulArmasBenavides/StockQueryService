@@ -14,7 +14,7 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/pedidos/")
-public class PedidoController {
+public class OrderController {
         private final PedidoService pedidoService;
         @GetMapping
         public ResponseEntity<List<Pedido>> getAllPedidos() {

@@ -1,7 +1,7 @@
 package com.maestria.springmvcstock.controller;
 import lombok.RequiredArgsConstructor;
 import com.maestria.springmvcstock.model.Producto;
-import com.maestria.springmvcstock.service.ProductoService;
+import com.maestria.springmvcstock.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -9,8 +9,8 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/productos/")
-public class ProductoController {
-    private final ProductoService productoService;
+public class ProductController {
+    private final ProductService productoService;
 
     @GetMapping
     public ResponseEntity<List<Producto>> getAllProducts() {
@@ -35,12 +35,6 @@ public class ProductoController {
         Producto updatedTask = productoService.updateProducto(id, task);
         return ResponseEntity.ok(updatedTask);
     }
-
-    // @PatchMapping("/{id}")
-    // public ResponseEntity<Task> partialUpdateTask(@PathVariable Long id, @RequestBody Map<String, Object> updates) {
-    //     Task updatedTask = productoService.partialUpdate(id, updates);
-    //     return ResponseEntity.ok(updatedTask);
-    // }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {

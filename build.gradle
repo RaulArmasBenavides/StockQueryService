@@ -37,7 +37,7 @@ tasks.named('test') {
 
 sonar {
 	properties {
-		property("sonar.projectKey", "springmvcstock")
+		property("sonar.projectKey", "StockQueryService")
 		property("sonar.organization", "unir")
 		property("sonar.scm.disabled", true)
 		property("sonar.java.binaries", "build/classes/java/main")

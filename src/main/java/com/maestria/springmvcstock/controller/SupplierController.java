@@ -10,6 +10,6 @@ import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/proveedores/")
-public class ProveedorController {
+public class SupplierController {
     
 }

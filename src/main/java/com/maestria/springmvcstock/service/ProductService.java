@@ -5,15 +5,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.maestria.springmvcstock.controller.exception.ResourceNotFoundException;
 import com.maestria.springmvcstock.model.Producto;
-import com.maestria.springmvcstock.repository.ProductoRepository;
+import com.maestria.springmvcstock.repository.ProductRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ProductoService {
+public class ProductService {
       @Autowired
-    private final ProductoRepository productoRepository;
+    private final ProductRepository productoRepository;
     public List<Producto> findAll() {
         return productoRepository.findAll();
     }
