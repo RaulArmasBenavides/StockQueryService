@@ -7,12 +7,12 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-public class Proveedor {
+public class Supplier {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String direccion;
-    private String telefono;
+    private String name;
+    private String address;
+    private String phone;
     private String email;
 }

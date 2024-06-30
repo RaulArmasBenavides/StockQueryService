@@ -21,5 +21,5 @@ public class Product {
     private int quantityStock;
 
     @ManyToOne
-    private Proveedor proveedor;
+    private Supplier proveedor;
 }

@@ -23,7 +23,7 @@ public class Pedido {
     private String estado;
     
     @ManyToOne
-    private Proveedor proveedor;
+    private Supplier proveedor;
     
     @OneToMany
     private List<Product> products;
