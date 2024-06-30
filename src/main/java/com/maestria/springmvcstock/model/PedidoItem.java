@@ -12,7 +12,7 @@ public class PedidoItem {
     @GeneratedValue
     private Long id;
     @ManyToOne
-    private Producto producto;
+    private Product producto;
     private int cantidad;
 
     // Getters y setters

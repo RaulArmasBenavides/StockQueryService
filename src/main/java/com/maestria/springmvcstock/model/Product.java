@@ -11,14 +11,14 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-public class Producto {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nombre;
-    private String descripcion;
-    private double precio;
-    private int cantidadStock;
+    private String name;
+    private String description;
+    private double price;
+    private int quantityStock;
 
     @ManyToOne
     private Proveedor proveedor;

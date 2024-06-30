@@ -32,7 +32,7 @@ public class PedidoService {
             existingPedido.setFechaPedido(pedido.getFechaPedido());
             existingPedido.setEstado(pedido.getEstado());
             existingPedido.setProveedor(pedido.getProveedor());
-            existingPedido.setProductos(pedido.getProductos());
+            existingPedido.setProducts(pedido.getProducts());
             return pedidoRepository.save(existingPedido);
         }
         return null;

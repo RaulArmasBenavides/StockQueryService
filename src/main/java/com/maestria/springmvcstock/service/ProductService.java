@@ -4,7 +4,7 @@ import org.hibernate.mapping.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.maestria.springmvcstock.controller.exception.ResourceNotFoundException;
-import com.maestria.springmvcstock.model.Producto;
+import com.maestria.springmvcstock.model.Product;
 import com.maestria.springmvcstock.repository.ProductRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
@@ -14,25 +14,25 @@ import lombok.RequiredArgsConstructor;
 public class ProductService {
       @Autowired
     private final ProductRepository productoRepository;
-    public List<Producto> findAll() {
+    public List<Product> findAll() {
         return productoRepository.findAll();
     }
 
-    public Producto findById(Long id) {
+    public Product findById(Long id) {
         return productoRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Task not found"));
     }
 
-    public Producto save(Producto prod) {
+    public Product save(Product prod) {
         return productoRepository.save(prod);
     }
 
-    public Producto updateProducto(Long id, Producto producto) {
-        Producto existingProducto = productoRepository.findById(id).orElse(null);
+    public Product updateProducto(Long id, Product producto) {
+        Product existingProducto = productoRepository.findById(id).orElse(null);
         if (existingProducto != null) {
-            existingProducto.setNombre(producto.getNombre());
-            existingProducto.setDescripcion(producto.getDescripcion());
-            existingProducto.setPrecio(producto.getPrecio());
-            existingProducto.setCantidadStock(producto.getCantidadStock());
+            existingProducto.setName(producto.getName());
+            existingProducto.setDescription(producto.getDescription());
+            existingProducto.setPrice(producto.getPrice());
+            existingProducto.setQuantityStock(producto.getQuantityStock());
             existingProducto.setProveedor(producto.getProveedor());
             return productoRepository.save(existingProducto);
         }

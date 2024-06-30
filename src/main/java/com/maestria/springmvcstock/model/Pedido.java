@@ -26,5 +26,5 @@ public class Pedido {
     private Proveedor proveedor;
     
     @OneToMany
-    private List<Producto> productos;
+    private List<Product> products;
 }
