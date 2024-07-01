@@ -1,5 +1,5 @@
 # Usar una imagen base de Gradle para construir la aplicación
-FROM gradle:7.4.2-jdk17 AS build
+FROM gradle:7.6-jdk17 AS build
 
 # Configurar el directorio de trabajo dentro del contenedor
 WORKDIR /app
