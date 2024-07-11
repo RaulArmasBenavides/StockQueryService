@@ -14,7 +14,7 @@ Use the following commands :
 
 
 docker build -t stockqueryservice .
-docker run -d -p 8080:8080 --name stockqueryservice stockqueryservice
+docker run -d -p 8003:8003 --name stockqueryservice stockqueryservice
 
 
 
