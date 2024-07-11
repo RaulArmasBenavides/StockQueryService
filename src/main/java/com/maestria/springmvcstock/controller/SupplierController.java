@@ -3,14 +3,10 @@ import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import com.maestria.springmvcstock.model.Product;
 import com.maestria.springmvcstock.model.Supplier;
-import com.maestria.springmvcstock.service.ProductService;
 import com.maestria.springmvcstock.service.SupplierService;
 
 import java.util.List;
-import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/suppliers/")
@@ -18,21 +14,21 @@ public class SupplierController {
       private final SupplierService supplierService;
 
     @GetMapping
-    public ResponseEntity<List<Supplier>> getAllProducts() {
+    public ResponseEntity<List<Supplier>> getAllSuppliers() {
         List<Supplier> supls = supplierService.getAllSuppliers();
         return ResponseEntity.ok(supls);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Supplier> getProductById(@PathVariable Long id) {
+    public ResponseEntity<Supplier> getSupplierById(@PathVariable Long id) {
         Supplier sup = supplierService.getSupplierById(id);
         return ResponseEntity.ok(sup);
     }
 
     @PostMapping
-    public ResponseEntity<Supplier> createProduct(@RequestBody Supplier task) {
-        Supplier createdTask = supplierService.createSupplier(task);
-        return ResponseEntity.status(201).body(createdTask);
+    public ResponseEntity<Supplier> createSupplier(@RequestBody Supplier sup) {
+        Supplier createdSup = supplierService.createSupplier(sup);
+        return ResponseEntity.status(201).body(createdSup);
     }
 
     @PutMapping("/{id}")
@@ -42,7 +38,7 @@ public class SupplierController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteSupplier(@PathVariable Long id) {
         supplierService.deleteSupplier(id);
         return ResponseEntity.noContent().build();
     }
