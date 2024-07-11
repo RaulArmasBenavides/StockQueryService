@@ -21,9 +21,6 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
-
-    //private static final String SECRET_KEY = "YmFzZTY0ZW5jb2RlZFNlY3JldEtleVNlY3JldEtleVNlY3JldEtleVNlY3JldEtleVNlY3JldEtleVNlY3JldEtleQ==";
-
     @Value("${SECRET_KEY}")
     private String secretKey;
     public String authenticate(String username, String password) {
