@@ -2,10 +2,8 @@ package com.maestria.springmvcstock.controller;
 
 
 import lombok.RequiredArgsConstructor;
-
-import com.maestria.springmvcstock.model.Pedido;
-import com.maestria.springmvcstock.service.PedidoService;
- 
+import com.maestria.springmvcstock.model.Order;
+import com.maestria.springmvcstock.service.OrderService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,30 +11,30 @@ import java.util.List;
 import java.util.Map;
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/v1/pedidos/")
+@RequestMapping("/api/v1/orders/")
 public class OrderController {
-        private final PedidoService pedidoService;
+        private final OrderService pedidoService;
         @GetMapping
-        public ResponseEntity<List<Pedido>> getAllPedidos() {
-            List<Pedido> tasks = pedidoService.getAllPedidos();
+        public ResponseEntity<List<Order>> getAllPedidos() {
+            List<Order> tasks = pedidoService.getAllOrders();
             return ResponseEntity.ok(tasks);
         }
     
         @GetMapping("/{id}")
-        public ResponseEntity<Pedido> getProductById(@PathVariable Long id) {
-                Pedido task = pedidoService.getPedidoById(id);
+        public ResponseEntity<Order> getOrderById(@PathVariable Long id) {
+                Order task = pedidoService.getOrderById(id);
             return ResponseEntity.ok(task);
         }
     
         @PostMapping
-        public ResponseEntity<Pedido> createProduct(@RequestBody Pedido ped) {
-                Pedido createdTask = pedidoService.createPedido(ped);
+        public ResponseEntity<Order> createOrder(@RequestBody Order ped) {
+                Order createdTask = pedidoService.createOrder(ped);
             return ResponseEntity.status(201).body(createdTask);
         }
     
         @PutMapping("/{id}")
-        public ResponseEntity<Pedido> updateProduct(@PathVariable Long id, @RequestBody Pedido ped) {
-                Pedido updatedTask = pedidoService.updatePedido(id, ped);
+        public ResponseEntity<Order> updateOrder(@PathVariable Long id, @RequestBody Order ped) {
+                Order updatedTask = pedidoService.updateOrder(id, ped);
             return ResponseEntity.ok(updatedTask);
         }
     
@@ -47,8 +45,8 @@ public class OrderController {
         // }
     
         @DeleteMapping("/{id}")
-        public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
-                pedidoService.deletePedido(id);
+        public ResponseEntity<Void> deleteOrder(@PathVariable Long id) {
+                pedidoService.deleteOrder(id);
             return ResponseEntity.noContent().build();
         }
     

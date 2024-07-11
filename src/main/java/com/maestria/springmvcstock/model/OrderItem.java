@@ -7,13 +7,13 @@ import jakarta.persistence.ManyToOne;
 import lombok.Data;
 @Entity
 @Data
-public class PedidoItem {
+public class OrderItem {
     @Id
     @GeneratedValue
     private Long id;
     @ManyToOne
-    private Product producto;
-    private int cantidad;
+    private Product product;
+    private int quantity;
 
     // Getters y setters
 }

@@ -15,15 +15,15 @@ import java.time.LocalDateTime;
 
 @Entity
 @Data
-public class Pedido {
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date fechaPedido;
-    private String estado;
+    private Date orderDate;
+    private String status;
     
     @ManyToOne
-    private Supplier proveedor;
+    private Supplier supplier;
     
     @OneToMany
     private List<Product> products;

@@ -8,7 +8,7 @@ import com.maestria.springmvcstock.service.CustomerService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/customers")
+@RequestMapping("/api/v1/customers")
 public class CustomerController {
 
     @Autowired
