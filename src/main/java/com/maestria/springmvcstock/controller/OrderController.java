@@ -15,7 +15,7 @@ import java.util.Map;
 public class OrderController {
         private final OrderService pedidoService;
         @GetMapping
-        public ResponseEntity<List<Order>> getAllPedidos() {
+        public ResponseEntity<List<Order>> getAllOrders() {
             List<Order> tasks = pedidoService.getAllOrders();
             return ResponseEntity.ok(tasks);
         }
