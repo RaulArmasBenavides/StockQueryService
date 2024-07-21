@@ -5,7 +5,6 @@ import com.maestria.springmvcstock.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
-import java.util.Map;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/v1/products/")
