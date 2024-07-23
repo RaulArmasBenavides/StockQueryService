@@ -26,5 +26,5 @@ public class Order {
     private Supplier supplier;
     
     @OneToMany
-    private List<Product> products;
+    private List<OrderItem> items;
 }
