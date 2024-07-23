@@ -32,7 +32,7 @@ public class OrderService {
             existingOrder.setOrderDate(order.getOrderDate());
             existingOrder.setStatus(order.getStatus());
             existingOrder.setSupplier(order.getSupplier());
-            existingOrder.setProducts(order.getProducts());
+            existingOrder.setItems(order.getItems());
             return orderRepository.save(existingOrder);
         }
         return null;
