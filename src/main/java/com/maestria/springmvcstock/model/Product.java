@@ -18,7 +18,7 @@ public class Product {
     private String name;
     private String description;
     private double price;
-    private int quantityStock;
+    // private int quantityStock;
 
     @ManyToOne
     private Supplier supplier;
