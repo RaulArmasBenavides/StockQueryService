@@ -6,37 +6,15 @@ import com.maestria.springmvcstock.repository.SupplierRepository;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 
-@Service
-@RequiredArgsConstructor
-public class SupplierService {
-    @Autowired
-    private SupplierRepository _SupplierRepository;
 
-    public List<Supplier> getAllSuppliers() {
-        return _SupplierRepository.findAll();
-    }
+public interface SupplierService {
+        List<Supplier> getAllSuppliers();
 
-    public Supplier getSupplierById(Long id) {
-        return _SupplierRepository.findById(id).orElse(null);
-    }
+        Supplier getSupplierById(Long id);
 
-    public Supplier createSupplier(Supplier proveedor) {
-        return _SupplierRepository.save(proveedor);
-    }
+        Supplier createSupplier(Supplier proveedor);
 
-    public Supplier updateSupplier(Long id, Supplier sup) {
-        Supplier existingSupplier = _SupplierRepository.findById(id).orElse(null);
-        if (existingSupplier != null) {
-            existingSupplier.setName(sup.getName());
-            existingSupplier.setAddress(sup.getAddress());
-            existingSupplier.setPhone(sup.getPhone());
-            existingSupplier.setEmail(sup.getEmail());
-            return _SupplierRepository.save(existingSupplier);
-        }
-        return null;
-    }
+        Supplier updateSupplier(Long id, Supplier sup);
 
-    public void deleteSupplier(Long id) {
-        _SupplierRepository.deleteById(id);
-    }
+        void deleteSupplier(Long id);
 }
