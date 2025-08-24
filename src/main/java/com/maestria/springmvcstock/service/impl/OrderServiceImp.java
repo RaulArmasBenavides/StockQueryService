@@ -8,8 +8,8 @@ import lombok.RequiredArgsConstructor;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
-@RequiredArgsConstructor
 @Service
+@RequiredArgsConstructor
 public class OrderServiceImp implements OrderService {
 
     private final OrderRepository orderRepository;

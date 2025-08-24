@@ -4,15 +4,15 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.maestria.springmvcstock.model.Customer;
 import com.maestria.springmvcstock.service.CustomerService;
- 
+
+import lombok.RequiredArgsConstructor;
 
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/api/v1/customers")
 public class CustomerController {
-
-    @Autowired
     private CustomerService customerService;
 
     @PostMapping

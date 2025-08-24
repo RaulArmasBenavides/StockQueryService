@@ -10,14 +10,13 @@ import com.maestria.springmvcstock.model.Supplier;
 import com.maestria.springmvcstock.repository.SupplierRepository;
 import com.maestria.springmvcstock.service.SupplierService;
 
+import lombok.RequiredArgsConstructor;
+
 
 @Service
+@RequiredArgsConstructor
 public class SupplierServiceImp implements SupplierService {
      private final SupplierRepository supplierRepository;
-
-    public SupplierServiceImp(SupplierRepository supplierRepository) {
-        this.supplierRepository = supplierRepository;
-    }
 
     public List<Supplier> getAllSuppliers() {
         return supplierRepository.findAll();

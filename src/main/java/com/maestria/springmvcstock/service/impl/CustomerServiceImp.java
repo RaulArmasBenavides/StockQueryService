@@ -4,19 +4,18 @@ import org.springframework.stereotype.Service;
 import com.maestria.springmvcstock.model.Customer;
 import com.maestria.springmvcstock.repository.CustomerRepository;
 import com.maestria.springmvcstock.service.CustomerService;
+
+import lombok.RequiredArgsConstructor;
+
 import com.maestria.springmvcstock.controller.exception.ResourceNotFoundException;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class CustomerServiceImp implements CustomerService {
 
     private final CustomerRepository customerRepository;
-
-    public CustomerServiceImp(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-    }
-
     @Override
     public Customer createCustomer(Customer customer) {
         return customerRepository.save(customer);
