@@ -22,7 +22,7 @@ class ProductControllerWebTest {
 
   @Test
   void getAllProducts_returns200() throws Exception {
-    mvc.perform(get("/api/v1/products/"))
+    mvc.perform(get("/api/v1/products"))
        .andExpect(status().isOk());
   }
 }
