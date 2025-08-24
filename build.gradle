@@ -25,8 +25,9 @@ dependencies {
     implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-    implementation 'org.postgresql:postgresql:42.3.3'  // Verifica la versión
+    implementation 'org.postgresql:postgresql'  
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'org.hibernate.orm:hibernate-community-dialects'
 }

@@ -1,7 +1,8 @@
 Este proyecto corre con jdk 17
 
+Abre Command Palette → Java: Configure Java Runtime.
 
-
+La conexión de la base de datos está en vercel a modo de pruebas
 
 Use the following commands :
 

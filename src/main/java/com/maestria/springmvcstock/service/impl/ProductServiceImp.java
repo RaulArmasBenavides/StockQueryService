@@ -1,17 +1,20 @@
 package com.maestria.springmvcstock.service.impl;
 
 import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.maestria.springmvcstock.controller.exception.ResourceNotFoundException;
 import com.maestria.springmvcstock.model.Product;
 import com.maestria.springmvcstock.repository.ProductRepository;
 import com.maestria.springmvcstock.service.ProductService;
 
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
 public class ProductServiceImp  implements ProductService {
     private final ProductRepository productoRepository;
-
-    public ProductServiceImp(ProductRepository orderRepository) {
-        this.productoRepository = orderRepository;
-    }
 
     public List<Product> findAll() {
         return productoRepository.findAll();
