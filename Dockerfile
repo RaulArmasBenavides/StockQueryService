@@ -22,7 +22,7 @@ WORKDIR /app
 COPY --from=build /app/build/libs/*.jar app.jar
 
 # Exponer el puerto en el que se ejecutará la aplicación
-EXPOSE 8080
+EXPOSE 8003
 
 # Definir el punto de entrada para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "app.jar"]
