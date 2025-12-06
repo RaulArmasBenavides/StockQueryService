@@ -1,5 +1,5 @@
-# Usar una imagen base de Gradle para construir la aplicación
-FROM gradle:7.6-jdk17 AS build
+# Etapa de build: Gradle + JDK 17 (Temurin)
+FROM gradle:7.6.4-jdk17-alpine AS build
 
 # Configurar el directorio de trabajo dentro del contenedor
 WORKDIR /app
@@ -10,10 +10,10 @@ COPY settings.gradle .
 COPY src ./src
 
 # Ejecutar el comando Gradle para compilar y empaquetar la aplicación
-RUN gradle build -x test
+RUN gradle clean build -x test
 
-# Usar una imagen base de OpenJDK para ejecutar la aplicación
-FROM openjdk:17-jdk-alpine
+# Etapa de runtime: JDK 17 (Temurin)
+FROM eclipse-temurin:17-jdk-alpine
 
 # Configurar el directorio de trabajo dentro del contenedor
 WORKDIR /app
