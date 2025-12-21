@@ -23,7 +23,10 @@ public class SecurityConfig {
       // .cors(cors -> cors.configurationSource(corsConfigurationSource()))
       .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
       .authorizeHttpRequests(auth -> auth
-        .requestMatchers("/actuator/**").permitAll()
+                .requestMatchers(
+                "/swagger-ui/**",
+                "/v3/api-docs/**",
+                "/actuator/**").permitAll()
         // ajusta qué proteger; ej. todo /api/v1/** autenticado:
         .requestMatchers("/api/v1/**").authenticated()
         // si quieres dejar GET públicos por ahora:
