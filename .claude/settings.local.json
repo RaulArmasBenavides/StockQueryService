@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem *)",
+      "Bash(Select-Object FullName)",
+      "Bash(Head -20)",
+      "Bash(chmod +x gradlew)",
+      "Bash(./gradlew clean *)",
+      "Bash(cp \"C:\\\\dev\\\\java\\\\StockManagement\\\\StockQueryService\\\\gradlew\" \"C:\\\\dev\\\\java\\\\StockManagement\\\\AccountingService\\\\\" && cp \"C:\\\\dev\\\\java\\\\StockManagement\\\\StockQueryService\\\\gradlew.bat\" \"C:\\\\dev\\\\java\\\\StockManagement\\\\AccountingService\\\\\")",
+      "Bash(cp -r \"C:\\\\dev\\\\java\\\\StockManagement\\\\StockQueryService\\\\gradle\" \"C:\\\\dev\\\\java\\\\StockManagement\\\\AccountingService\\\\\" && ls -la \"C:\\\\dev\\\\java\\\\StockManagement\\\\AccountingService\\\\gradlew\")"
+    ]
+  }
+}
