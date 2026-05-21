@@ -13,7 +13,7 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class ProductServiceImp  implements ProductService {
+public class ProductServiceImp implements ProductService {
     private final ProductRepository productoRepository;
 
     public List<Product> findAll() {
@@ -33,8 +33,9 @@ public class ProductServiceImp  implements ProductService {
         if (existingProducto != null) {
             existingProducto.setName(producto.getName());
             existingProducto.setDescription(producto.getDescription());
-            existingProducto.setPrice(producto.getPrice());
-            existingProducto.setSupplier(producto.getSupplier());
+            existingProducto.setSalePrice(producto.getSalePrice());
+            existingProducto.setPurchasePrice(producto.getPurchasePrice());
+            existingProducto.setSuppliers(producto.getSuppliers()); 
             return productoRepository.save(existingProducto);
         }
         return null;

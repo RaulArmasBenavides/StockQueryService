@@ -1,0 +1,28 @@
+package com.maestria.springmvcstock.config;
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.servers.Server;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import java.util.List;
+
+@Configuration
+public class OpenApiConfig {
+
+  @Bean
+  public OpenAPI openAPI() {
+    return new OpenAPI()
+        .info(new Info()
+            .title("ERP API Operation Service")
+            .description("API para gestión de clientes.")
+            .version("v1")
+            .contact(new Contact()
+                .name("Raúl Armas")
+                .email("raularmasbx@gmail.com")))
+        // opcional: fija servers en vez de "Generated server url"
+        .servers(List.of(
+            new Server().url("http://localhost:8006").description("Local")));
+  }
+}
